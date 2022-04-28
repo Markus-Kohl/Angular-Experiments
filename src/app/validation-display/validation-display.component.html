@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label for="firstName">Last Name*</mat-label>
+    <input
+      id="firstName"
+      type="number"
+      title="First Name"
+      aria-labelledby="first Name"
+      matInput
+      name="firstName"
+      formControlName="firstName"
+    />
+    <mat-error>
+      <span
+        [ngServeValidationDisplay]="firstName"
+        fieldName="First Name"
+      ></span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label for="firstName">First Name</mat-label>
+    <input
+      id="lastName"
+      type="text"
+      title="Last Name"
+      aria-labelledby="last Name"
+      matInput
+      matInputCommified
+      name="lastName"
+      formControlName="lastName"
+      required
+    />
+    <mat-error>
+      <span [ngServeValidationDisplay]="lastName" fieldName="Last Name"></span>
+    </mat-error>
+  </mat-form-field>
+</form>

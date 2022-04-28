@@ -1,0 +1,15 @@
+<button mat-button type="button" (click)="create()">Erstellen</button>
+<ng-container *ngIf="creating">
+  <app-card>
+    <app-card-content [food]="food"></app-card-content>
+    <button mat-button type="button" (click)="add()">Add</button>
+  </app-card>
+</ng-container>
+<section>
+  <h1>Einrichtungen</h1>
+  <ng-container *ngFor="let card of cards| async" >
+    <app-card>
+      <app-card-content #cards [food]="card"></app-card-content>
+    </app-card>
+  </ng-container>
+</section>

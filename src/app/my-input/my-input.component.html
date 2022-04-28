@@ -1,0 +1,17 @@
+<div [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label for="number">Number*</mat-label>
+    <input
+      id="number"
+      title="number"
+      aria-labelledby="number"
+      matInput
+      name="number"
+      formControlName="number"
+      currencyFormatter
+    />
+    <mat-error>
+      <span [ngServeValidationDisplay]="number" fieldName="number"></span>
+    </mat-error>
+  </mat-form-field>
+</div>

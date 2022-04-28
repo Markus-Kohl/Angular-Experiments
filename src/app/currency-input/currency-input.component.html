@@ -1,0 +1,16 @@
+<div [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label for="number">Number*</mat-label>
+    <input
+      id="x"
+      title="string"
+      aria-labelledby="number"
+      matInput
+      name="number"
+      type="string"
+      formControlName="number"
+      matInputCommified
+      [value]="formGroup.get('number').value"
+    />
+  </mat-form-field>
+</div>
