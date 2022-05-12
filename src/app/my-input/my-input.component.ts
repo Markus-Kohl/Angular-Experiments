@@ -12,7 +12,7 @@ import {
   styleUrls: ['./my-input.component.scss'],
 })
 export class MyInputComponent implements OnInit {
-  formGroup: FormGroup;
+  formGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 

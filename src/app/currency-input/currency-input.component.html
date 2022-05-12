@@ -9,8 +9,8 @@
       name="number"
       type="string"
       formControlName="number"
-      matInputCommified
-      [value]="formGroup.get('number').value"
+      (blur)="formatInput($event)"
     />
   </mat-form-field>
 </div>
+<!-- matInputCommified -->

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +29,16 @@ import { AutocompleteDirective } from './material-autocomplete/autocomplete.dire
 import { FilterPipe } from './material-autocomplete/filter.pipe';
 import { AutocompleteComponent } from './material-autocomplete/autocomplete/autocomplete.component';
 import { CurrencyInputComponent } from './currency-input/currency-input.component';
+import { RxJsSchedulersComponent } from './rx-js-schedulers/rx-js-schedulers.component';
+import { registerLocaleData } from '@angular/common';
+import localeDeAt from '@angular/common/locales/de-at';
+import { SocialNumberPipe } from './shared/pipes/social-number.pipe';
+import { TableComponent } from './table/table.component';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { BurgerComponent } from './burger/burger.component';
+import { MatButtonModule } from '@angular/material/button';
 
+registerLocaleData(localeDeAt);
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +58,10 @@ import { CurrencyInputComponent } from './currency-input/currency-input.componen
     FilterPipe,
     AutocompleteComponent,
     CurrencyInputComponent,
+    RxJsSchedulersComponent,
+    SocialNumberPipe,
+    TableComponent,
+    BurgerComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +74,8 @@ import { CurrencyInputComponent } from './currency-input/currency-input.componen
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    TextFieldModule,
+    MatButtonModule,
   ],
   providers: [
     {
@@ -69,6 +84,7 @@ import { CurrencyInputComponent } from './currency-input/currency-input.componen
         ...VALIDATION_MESSAGES,
       },
     },
+    { provide: LOCALE_ID, useValue: 'de-at' },
   ],
   bootstrap: [AppComponent],
 })

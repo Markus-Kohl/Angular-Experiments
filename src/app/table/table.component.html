@@ -1,0 +1,63 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          type="name"
+          matInput
+          [formControl]="nameFormControl"
+          placeholder="name"
+        />
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Name bitte eingeben!
+        </mat-error>
+      </mat-form-field>
+    </td></ng-container
+  >
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef>Anschrift</th>
+    <td mat-cell *matCellDef="let element">
+      <form class="form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Anschrift</mat-label>
+          <textarea
+            type="name"
+            matInput
+            cdkAutosizeMaxRows="3"
+            cdkTextareaAutosize
+            [formControl]="nameFormControl"
+            placeholder="name"
+          ></textarea>
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="anschriftFormControl.hasError('required')">
+            Anschrit bitte eingeben! Text ist viel zu lang......................
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Symbol</th>
+    <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
