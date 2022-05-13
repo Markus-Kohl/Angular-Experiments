@@ -1,0 +1,49 @@
+<h1>Burger Animation</h1>
+<section class="burgers">
+  <div class="burger-animation">
+    <div class="min-height">
+      <div class="burger" [@collapse]="arc">
+        <div class="top-bred"></div>
+        <div class="leaf"></div>
+        <div class="tomato"></div>
+        <div class="cheese"></div>
+        <div class="patty"></div>
+        <div class="leaf"></div>
+        <div class="bottom-bred"></div>
+      </div>
+    </div>
+    <button mat-button title="click" (click)="collapse()">
+      {{ this.arc === "false" ? "Collapse" : "Unfold" }}
+    </button>
+  </div>
+  <div class="burger-animation">
+    <div class="min-height">
+      <div class="burger" [@shakeit]="shake">
+        <div class="top-bred"></div>
+        <div class="leaf"></div>
+        <div class="tomato"></div>
+        <div class="cheese"></div>
+        <div class="patty"></div>
+        <div class="leaf"></div>
+        <div class="bottom-bred"></div>
+      </div>
+    </div>
+    <button mat-button title="click" (click)="shakeIt()">Shake it</button>
+  </div>
+  <div class="burger-animation">
+    <div class="min-height">
+      <div class="burger" @inOut *ngIf="display">
+        <div class="top-bred"></div>
+        <div class="leaf"></div>
+        <div class="tomato"></div>
+        <div class="cheese"></div>
+        <div class="patty"></div>
+        <div class="leaf"></div>
+        <div class="bottom-bred"></div>
+      </div>
+    </div>
+    <button mat-button title="click" (click)="displayBurger()">
+      {{ !this.display ? "Display Burger" : "Hide Burger" }}
+    </button>
+  </div>
+</section>

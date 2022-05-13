@@ -35,8 +35,9 @@ import localeDeAt from '@angular/common/locales/de-at';
 import { SocialNumberPipe } from './shared/pipes/social-number.pipe';
 import { TableComponent } from './table/table.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
-import { BurgerComponent } from './burger/burger.component';
+import { BurgerAnimationComponent } from './burger-animation/burger-animation.component';
 import { MatButtonModule } from '@angular/material/button';
+import { BurgerComponent } from './burger/burger.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -61,6 +62,7 @@ registerLocaleData(localeDeAt);
     RxJsSchedulersComponent,
     SocialNumberPipe,
     TableComponent,
+    BurgerAnimationComponent,
     BurgerComponent,
   ],
   imports: [
