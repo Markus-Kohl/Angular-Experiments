@@ -5,12 +5,7 @@ $bred-color: #cca72f;
 h1 {
   text-align: center;
 }
-.burger {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
- }
+
 
  .burgers {
    display: flex;
@@ -26,8 +21,19 @@ h1 {
    height: 30rem;
    min-width: 25rem;
    border: 5px solid rgba(47, 131, 131, 0.267);
+   border-radius: 1rem;
+   background-color: hsla(190, 100%,50%, 0.1);
 
  }
+
+ /*---------------BURGER BEGIN------------------*/
+ .burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+ }
+
  .bred {
   height: $height;
   width: $width;
@@ -72,6 +78,8 @@ h1 {
   @extend .ingredients;
   background-color: #2bb348;
 }
+ /*---------------BURGER END------------------*/
+
 
 .mat-button {
   background: rgba(47, 131, 131, 0.267);

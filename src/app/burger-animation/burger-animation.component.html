@@ -46,4 +46,18 @@
       {{ !this.display ? "Display Burger" : "Hide Burger" }}
     </button>
   </div>
+  <div class="burger-animation">
+    <div class="min-height">
+      <div class="burger" [@rotatedState]="state">
+        <div class="top-bred"></div>
+        <div class="leaf"></div>
+        <div class="tomato"></div>
+        <div class="cheese"></div>
+        <div class="patty"></div>
+        <div class="leaf"></div>
+        <div class="bottom-bred"></div>
+      </div>
+    </div>
+    <button mat-button title="click" (click)="rotateBurger()">Rotate</button>
+  </div>
 </section>

@@ -14,19 +14,25 @@ import {
   shakeItAnimation,
   dimAnimation,
   collapseAnimation,
+  rotateAnimation,
 } from './animations';
 
 @Component({
   selector: 'app-burger-animation',
   templateUrl: './burger-animation.component.html',
   styleUrls: ['./burger-animation.component.scss'],
-  animations: [collapseAnimation, shakeItAnimation, dimAnimation],
+  animations: [
+    collapseAnimation,
+    shakeItAnimation,
+    dimAnimation,
+    rotateAnimation,
+  ],
 })
 export class BurgerAnimationComponent implements OnInit {
   arc: string = 'false';
   shake: string = 'shakestart';
   display: boolean = false;
-
+  state = 'default';
   constructor() {}
 
   ngOnInit(): void {}
@@ -41,5 +47,9 @@ export class BurgerAnimationComponent implements OnInit {
 
   displayBurger() {
     this.display = this.display === true ? false : true;
+  }
+
+  rotateBurger() {
+    this.state = this.state === 'default' ? 'rotated' : 'default';
   }
 }
