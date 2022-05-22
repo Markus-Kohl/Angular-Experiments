@@ -10,6 +10,7 @@ h1 {
  .burgers {
    display: flex;
    min-height: 500px;
+   flex-wrap: wrap;
  }
 
  .burger-animation {
@@ -23,7 +24,6 @@ h1 {
    border: 5px solid rgba(47, 131, 131, 0.267);
    border-radius: 1rem;
    background-color: hsla(190, 100%,50%, 0.1);
-
  }
 
  /*---------------BURGER BEGIN------------------*/
@@ -94,4 +94,9 @@ h1 {
 
 *:hover {
   outline:1px blue solid;
+}
+
+.grid-container-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

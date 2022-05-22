@@ -17,9 +17,9 @@ import { EinrichtungenComponent } from './cards/einrichtungen/einrichtungen.comp
 export class AppComponent implements OnInit, AfterContentInit {
   title = 'angular-experiments';
   @ViewChild(EinrichtungenComponent, { static: false })
-  einrichtungenComponent: EinrichtungenComponent;
+  einrichtungenComponent!: EinrichtungenComponent;
 
-  formGroup: FormGroup;
+  formGroup!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,

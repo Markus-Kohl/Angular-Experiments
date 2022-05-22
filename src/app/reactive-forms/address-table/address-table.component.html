@@ -1,0 +1,81 @@
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+</mat-form-field>
+<div>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- street Column -->
+    <ng-container matColumnDef="street">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by street"
+      >
+        street
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.street }}</td>
+    </ng-container>
+
+    <!-- street number Column -->
+    <ng-container matColumnDef="number">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by street number"
+      >
+        street number
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.number }}</td>
+    </ng-container>
+
+    <!-- postal Column -->
+    <ng-container matColumnDef="postal">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by postal"
+      >
+        postal
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.postal }}</td>
+    </ng-container>
+
+    <!-- company Column -->
+    <ng-container matColumnDef="company">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by company"
+      >
+        company
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.company }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by company"
+      >
+        action
+      </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <button mat-button type="button" (click)="onDelete(i)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

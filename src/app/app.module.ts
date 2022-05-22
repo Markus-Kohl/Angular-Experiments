@@ -37,6 +37,14 @@ import { TableComponent } from './table/table.component';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { BurgerAnimationComponent } from './burger-animation/burger-animation.component';
 import { MatButtonModule } from '@angular/material/button';
+import { BurgerComponent } from './burger-animation/burger/burger.component';
+import { TouchScaleDirective } from './directives/animation-directives/touch-scale.directive';
+import { MoveDirective } from './directives/animation-directives/move.directive';
+import { MainFormComponent } from './reactive-forms/main-form/main-form.component';
+import { AddressComponent } from './reactive-forms/address/address.component';
+import { BasicInfoComponent } from './reactive-forms/basic-info/basic-info.component';
+import { AddressTableComponent } from './reactive-forms/address-table/address-table.component';
+import { AddressCardsComponent } from './reactive-forms/address-cards/address-cards.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -62,6 +70,14 @@ registerLocaleData(localeDeAt);
     SocialNumberPipe,
     TableComponent,
     BurgerAnimationComponent,
+    TouchScaleDirective,
+    BurgerComponent,
+    MoveDirective,
+    MainFormComponent,
+    AddressComponent,
+    BasicInfoComponent,
+    AddressTableComponent,
+    AddressCardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +91,9 @@ registerLocaleData(localeDeAt);
     ReactiveFormsModule,
     MatInputModule,
     TextFieldModule,
+    MatButtonModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatButtonModule,
   ],
   providers: [

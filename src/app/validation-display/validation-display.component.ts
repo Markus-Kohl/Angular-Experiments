@@ -12,7 +12,7 @@ import {
   styleUrls: ['./validation-display.component.scss'],
 })
 export class ValidationDisplayComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {

@@ -1,14 +1,3 @@
-import {
-  animate,
-  group,
-  keyframes,
-  query,
-  stagger,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import {
   shakeItAnimation,
@@ -33,6 +22,8 @@ export class BurgerAnimationComponent implements OnInit {
   shake: string = 'shakestart';
   display: boolean = false;
   state = 'default';
+  isMoving = false;
+  direction = '';
   constructor() {}
 
   ngOnInit(): void {}
@@ -51,5 +42,10 @@ export class BurgerAnimationComponent implements OnInit {
 
   rotateBurger() {
     this.state = this.state === 'default' ? 'rotated' : 'default';
+  }
+
+  moveBurger(direction: string) {
+    this.isMoving = true;
+    this.direction = direction;
   }
 }

@@ -8,7 +8,7 @@ import { FormBuilder, FormControl } from '@angular/forms';
 })
 export class AutocompleteComponent implements OnInit {
   options: string[] = ['One', 'Two', 'Three', 'Four', 'Five'];
-  control: FormControl;
+  control!: FormControl;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {

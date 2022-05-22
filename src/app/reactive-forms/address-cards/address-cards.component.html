@@ -1,0 +1,7 @@
+<section>
+  <button mat-button (click)="onCreateClick()">Create</button>
+</section>
+<ng-container *ngIf="created">
+  <app-main-form (formDataEvent)="onFormDataEvent($event)"></app-main-form>
+</ng-container>
+<app-address-table [data]="data"></app-address-table>

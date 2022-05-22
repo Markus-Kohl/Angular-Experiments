@@ -15,10 +15,10 @@ import { VALIDATION_MESSAGES } from '../util/validation-messages';
   selector: '[ngServeValidationDisplay]',
 })
 export class ValidationDisplayDirective {
-  @Input('ngServeValidationDisplay') control: FormControl;
-  @Input() fieldName: string;
+  @Input('ngServeValidationDisplay') control!: FormControl;
+  @Input() fieldName!: string;
 
-  public errorMessage$: Subscription;
+  public errorMessage$!: Subscription;
 
   constructor(
     private element: ElementRef,
