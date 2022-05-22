@@ -1,12 +1,11 @@
 import {
-  AfterContentInit,
-  AfterViewInit,
-  ChangeDetectorRef,
   Component,
   OnInit,
+  AfterContentInit,
   ViewChild,
+  ChangeDetectorRef,
 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { EinrichtungenComponent } from './cards/einrichtungen/einrichtungen.component';
 
 @Component({
