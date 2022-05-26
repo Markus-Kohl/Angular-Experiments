@@ -45,6 +45,9 @@ import { AddressComponent } from './reactive-forms/address/address.component';
 import { BasicInfoComponent } from './reactive-forms/basic-info/basic-info.component';
 import { AddressTableComponent } from './reactive-forms/address-table/address-table.component';
 import { AddressCardsComponent } from './reactive-forms/address-cards/address-cards.component';
+import { UploadComponent } from './upload/upload.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -78,6 +81,7 @@ registerLocaleData(localeDeAt);
     BasicInfoComponent,
     AddressTableComponent,
     AddressCardsComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +99,8 @@ registerLocaleData(localeDeAt);
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
+    HttpClientModule,
+    MatIconModule,
   ],
   providers: [
     {

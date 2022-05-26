@@ -1,0 +1,21 @@
+<h1>Upload Document</h1>
+
+<input
+  placeholder="Upload File"
+  type="file"
+  class="file-input"
+  (change)="onChange($event)"
+  #fileUpload
+/>
+<div class="file-upload">
+  {{ fileName || "No file uploaded yet." }}
+
+  <button
+    mat-mini-fab
+    color="primary"
+    class="upload-btn"
+    (click)="fileUpload.click()"
+  >
+    <mat-icon>attach_file</mat-icon>
+  </button>
+</div>
