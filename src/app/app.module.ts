@@ -38,8 +38,6 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { BurgerAnimationComponent } from './burger-animation/burger-animation.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BurgerComponent } from './burger-animation/burger/burger.component';
-import { TouchScaleDirective } from './directives/animation-directives/touch-scale.directive';
-import { MoveDirective } from './directives/animation-directives/move.directive';
 import { MainFormComponent } from './reactive-forms/main-form/main-form.component';
 import { AddressComponent } from './reactive-forms/address/address.component';
 import { BasicInfoComponent } from './reactive-forms/basic-info/basic-info.component';
@@ -48,6 +46,9 @@ import { AddressCardsComponent } from './reactive-forms/address-cards/address-ca
 import { UploadComponent } from './upload/upload.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { MoveDirective } from './burger-animation/animation-directives/move.directive';
+import { TouchScaleDirective } from './burger-animation/animation-directives/touch-scale.directive';
+import { ScssExperimentsComponent } from './scss-experiments/scss-experiments.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -82,6 +83,7 @@ registerLocaleData(localeDeAt);
     AddressTableComponent,
     AddressCardsComponent,
     UploadComponent,
+    ScssExperimentsComponent,
   ],
   imports: [
     BrowserModule,

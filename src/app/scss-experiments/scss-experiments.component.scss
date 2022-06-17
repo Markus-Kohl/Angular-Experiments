@@ -1,0 +1,21 @@
+.box-size {
+  height: 100px;
+  width: 100px;
+}
+
+@mixin bg-color($color) {
+  background-color: $color;
+}
+
+$i: 1;
+$colors: "blue", "black", "red";
+@each $color in $colors {
+  div .color#{$i} {
+    @include bg-color($color);
+    @extend .box-size;
+  }
+  $i: $i + 1;
+}
+div {
+ // @include bg-color($color);
+}

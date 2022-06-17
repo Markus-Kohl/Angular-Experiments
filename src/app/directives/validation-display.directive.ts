@@ -1,9 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  Inject,
-  Input,
-} from '@angular/core';
+import { Directive, ElementRef, Inject, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
