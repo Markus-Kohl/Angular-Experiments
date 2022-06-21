@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { PeriodicElement } from '../../table/table.component';
 import { DynamicTableComponent } from '../dynamic-table.component';
@@ -10,7 +16,7 @@ import { DynamicTableComponent } from '../dynamic-table.component';
 })
 export class PeriodicTableComponent implements OnInit {
   @ViewChild(DynamicTableComponent, { static: true })
-  dynamicTable: DynamicTableComponent<PeriodicElement>;
+  dynamicTable: DynamicTableComponent<unknown>;
   ELEMENT_DATA: PeriodicElement[] = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
     { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -25,11 +31,6 @@ export class PeriodicTableComponent implements OnInit {
   ];
   headers = ['position', 'name', 'weight', 'symbol'];
   constructor() {}
-
+  @Input() public content: TemplateRef<any>;
   ngOnInit(): void {}
-
-  announceSortChange(sort: Sort): void {
-    this.dynamicTable.sortData(sort);
-    console.log('sort', sort);
-  }
 }

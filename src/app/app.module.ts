@@ -51,6 +51,7 @@ import { TouchScaleDirective } from './burger-animation/animation-directives/tou
 import { ScssExperimentsComponent } from './scss-experiments/scss-experiments.component';
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
 import { PeriodicTableComponent } from './dynamic-table/periodic-table/periodic-table.component';
+import { SortingTableDirective } from './dynamic-table/sorting-table.directive';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -88,6 +89,7 @@ registerLocaleData(localeDeAt);
     ScssExperimentsComponent,
     DynamicTableComponent,
     PeriodicTableComponent,
+    SortingTableDirective,
   ],
   imports: [
     BrowserModule,
