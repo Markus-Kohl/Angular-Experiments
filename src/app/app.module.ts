@@ -49,6 +49,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MoveDirective } from './burger-animation/animation-directives/move.directive';
 import { TouchScaleDirective } from './burger-animation/animation-directives/touch-scale.directive';
 import { ScssExperimentsComponent } from './scss-experiments/scss-experiments.component';
+import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import { PeriodicTableComponent } from './dynamic-table/periodic-table/periodic-table.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -84,6 +86,8 @@ registerLocaleData(localeDeAt);
     AddressCardsComponent,
     UploadComponent,
     ScssExperimentsComponent,
+    DynamicTableComponent,
+    PeriodicTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,9 +104,9 @@ registerLocaleData(localeDeAt);
     MatButtonModule,
     MatSortModule,
     MatPaginatorModule,
-    MatButtonModule,
     HttpClientModule,
     MatIconModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

@@ -1,0 +1,29 @@
+<ng-container *ngIf="showFilter">
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
+    />
+    <button
+      *ngIf="input.value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clear(input); applyFilter($event)"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</ng-container>
+<table mat-table [dataSource]="dataSource">
+  <ng-content></ng-content>
+  <tr mat-header-row *matHeaderRowDef="headers; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: headers"></tr>
+  <ng-container *ngIf="showFooter">
+    <tr mat-footer-row *matFooterRowDef="headers"></tr>
+  </ng-container>
+</table>
+<mat-paginator showFirstLastButtons pageSize="10"> </mat-paginator>
