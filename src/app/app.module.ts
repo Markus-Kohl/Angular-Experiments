@@ -52,6 +52,9 @@ import { ScssExperimentsComponent } from './scss-experiments/scss-experiments.co
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
 import { PeriodicTableComponent } from './dynamic-table/periodic-table/periodic-table.component';
 import { SortingTableDirective } from './dynamic-table/sorting-table.directive';
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ClearDirective } from './auto-complete/clear.directive';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -90,6 +93,8 @@ registerLocaleData(localeDeAt);
     DynamicTableComponent,
     PeriodicTableComponent,
     SortingTableDirective,
+    AutoCompleteComponent,
+    ClearDirective,
   ],
   imports: [
     BrowserModule,
@@ -109,6 +114,7 @@ registerLocaleData(localeDeAt);
     HttpClientModule,
     MatIconModule,
     MatPaginatorModule,
+    MatAutocompleteModule,
   ],
   providers: [
     {
