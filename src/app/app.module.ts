@@ -13,7 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { EinrichtungenComponent } from './cards/einrichtungen/einrichtungen.component';
 import { CardContentComponent } from './cards/card-content/card-content.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ValidationDisplayComponent } from './validation-display/validation-display.component';
 import { ValidationDisplayDirective } from './directives/validation-display.directive';
@@ -55,6 +55,8 @@ import { SortingTableDirective } from './dynamic-table/sorting-table.directive';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ClearDirective } from './auto-complete/clear.directive';
+import { DynamicTableWithInputsComponent } from './dynamic-table-with-inputs/dynamic-table-with-inputs.component';
+import { TableWithInputsComponent } from './table-with-inputs/table-with-inputs.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -95,6 +97,8 @@ registerLocaleData(localeDeAt);
     SortingTableDirective,
     AutoCompleteComponent,
     ClearDirective,
+    DynamicTableWithInputsComponent,
+    TableWithInputsComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +109,7 @@ registerLocaleData(localeDeAt);
     MatSortModule,
     MatCardModule,
     MatFormFieldModule,
+    FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     TextFieldModule,
