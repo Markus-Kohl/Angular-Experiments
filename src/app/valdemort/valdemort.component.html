@@ -1,0 +1,32 @@
+<form [formGroup]="form" #f="ngForm">
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email" type="email" />
+    <mat-error
+      ><val-errors controlName="email" label="The email"></val-errors
+    ></mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      placeholder="age"
+      formControlName="age"
+      class="form-control"
+      type="number"
+    />
+    <mat-error>
+      <val-errors controlName="age">
+        <ng-template valError="required">The age is required</ng-template>
+        <ng-template valError="min" let-error="error"
+          >You must be at least {{ error.min }} years old</ng-template
+        >
+      </val-errors>
+    </mat-error>
+  </mat-form-field>
+
+  <button class="btn btn-primary me-2" type="submit" (click)="submit()">
+    Submit
+  </button>
+  <button class="btn btn-secondary" type="button" (click)="reset()">
+    Reset
+  </button>
+</form>

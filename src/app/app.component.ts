@@ -6,6 +6,7 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { DisplayMode, ValdemortConfig } from 'ngx-valdemort';
 import { EinrichtungenComponent } from './cards/einrichtungen/einrichtungen.component';
 
 @Component({
@@ -22,8 +23,12 @@ export class AppComponent implements OnInit, AfterContentInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private changeDetectorRef: ChangeDetectorRef
-  ) {}
+    private changeDetectorRef: ChangeDetectorRef,
+    private config: ValdemortConfig
+  ) {
+    config.displayMode = DisplayMode.ONE;
+    config.shouldDisplayErrors = () => true;
+  }
 
   ngOnInit(): void {}
 

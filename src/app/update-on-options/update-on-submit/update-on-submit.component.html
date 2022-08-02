@@ -1,0 +1,15 @@
+<form class="example-form" [formGroup]="formGroup">
+  <h1>Update on Submit</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com"
+           (blur)="updateValue($event)" (change)="changeValue($event)">
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button mat-button type="submit" (submit)="onSubmit()">Submit</button>
+</form>

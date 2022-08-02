@@ -78,6 +78,7 @@ export class TableWithInputsComponent implements OnInit {
   getFormGroupAt(index: number): FormGroup {
     return this.formGroup.get(`elements.${index}`) as FormGroup;
   }
+
   onChange(event: any, index: number, formControlName: string) {
     const formGroup = this.formGroup.get(`elements.${index}`);
     formGroup?.get(formControlName)?.patchValue(event.target.value);

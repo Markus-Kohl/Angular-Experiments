@@ -12,7 +12,10 @@ import { CardComponent } from './cards/card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { EinrichtungenComponent } from './cards/einrichtungen/einrichtungen.component';
 import { CardContentComponent } from './cards/card-content/card-content.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {
+  MatFormFieldModule,
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ValidationDisplayComponent } from './validation-display/validation-display.component';
@@ -57,6 +60,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ClearDirective } from './auto-complete/clear.directive';
 import { DynamicTableWithInputsComponent } from './dynamic-table-with-inputs/dynamic-table-with-inputs.component';
 import { TableWithInputsComponent } from './table-with-inputs/table-with-inputs.component';
+import { ValdemortComponent } from './valdemort/valdemort.component';
+import { ValdemortModule } from 'ngx-valdemort';
+import { DefaultValidationErrors } from 'ngx-valdemort/lib/default-validation-errors.service';
+import { UpdateOnOptionsComponent } from './update-on-options/update-on-options.component';
+import { UpdateOnBlurComponent } from './update-on-options/update-on-blur/update-on-blur.component';
+import { UpdateOnSubmitComponent } from './update-on-options/update-on-submit/update-on-submit.component';
+import { UpdateOnChangeComponent } from './update-on-options/update-on-change/update-on-change.component';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -99,6 +109,11 @@ registerLocaleData(localeDeAt);
     ClearDirective,
     DynamicTableWithInputsComponent,
     TableWithInputsComponent,
+    ValdemortComponent,
+    UpdateOnOptionsComponent,
+    UpdateOnBlurComponent,
+    UpdateOnSubmitComponent,
+    UpdateOnChangeComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,6 +135,7 @@ registerLocaleData(localeDeAt);
     MatIconModule,
     MatPaginatorModule,
     MatAutocompleteModule,
+    ValdemortModule,
   ],
   providers: [
     {
@@ -129,6 +145,10 @@ registerLocaleData(localeDeAt);
       },
     },
     { provide: LOCALE_ID, useValue: 'de-at' },
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { floatLabel: 'always' },
+    },
   ],
   bootstrap: [AppComponent],
 })
