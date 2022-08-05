@@ -58,7 +58,6 @@ import { SortingTableDirective } from './dynamic-table/sorting-table.directive';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ClearDirective } from './auto-complete/clear.directive';
-import { DynamicTableWithInputsComponent } from './dynamic-table-with-inputs/dynamic-table-with-inputs.component';
 import { TableWithInputsComponent } from './table-with-inputs/table-with-inputs.component';
 import { ValdemortComponent } from './valdemort/valdemort.component';
 import { ValdemortModule } from 'ngx-valdemort';
@@ -67,6 +66,9 @@ import { UpdateOnOptionsComponent } from './update-on-options/update-on-options.
 import { UpdateOnBlurComponent } from './update-on-options/update-on-blur/update-on-blur.component';
 import { UpdateOnSubmitComponent } from './update-on-options/update-on-submit/update-on-submit.component';
 import { UpdateOnChangeComponent } from './update-on-options/update-on-change/update-on-change.component';
+import { InputWithRestrictionComponent } from './input-with-restriction/input-with-restriction.component';
+import { FocusInputComponent } from './directive-to-focus-on-invalid-input/focus-input/focus-input.component';
+import { FocusInvalidInputDirective } from './directive-to-focus-on-invalid-input/focus-invalid-input.directive';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -107,13 +109,15 @@ registerLocaleData(localeDeAt);
     SortingTableDirective,
     AutoCompleteComponent,
     ClearDirective,
-    DynamicTableWithInputsComponent,
     TableWithInputsComponent,
     ValdemortComponent,
     UpdateOnOptionsComponent,
     UpdateOnBlurComponent,
     UpdateOnSubmitComponent,
     UpdateOnChangeComponent,
+    InputWithRestrictionComponent,
+    FocusInputComponent,
+    FocusInvalidInputDirective,
   ],
   imports: [
     BrowserModule,

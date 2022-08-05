@@ -23,10 +23,9 @@ export class UpdateOnChangeComponent implements OnInit {
 
   validate(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      console.log('control value: ', control.value);
+      console.log('validator value: ', control.value);
       return null;
     }
-
   }
 
   changeValue(event: Event) {

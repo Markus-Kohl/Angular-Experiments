@@ -23,7 +23,7 @@ export class UpdateOnSubmitComponent implements OnInit {
 
   validate(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      console.log('control value: ', control.value);
+      console.log('validator value: ', control.value);
       return null;
     }
 

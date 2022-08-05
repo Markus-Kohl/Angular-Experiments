@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Number</mat-label>
+    <input type="text" matInput [formControl]="numberFormControl" placeholder="Ex. pat@example.com"
+           (input)="onKeyPress($event)" >
+    <mat-error *ngIf="numberFormControl.hasError('required')">
+      Please enter a valid number
+    </mat-error>
+  </mat-form-field>
+</div>

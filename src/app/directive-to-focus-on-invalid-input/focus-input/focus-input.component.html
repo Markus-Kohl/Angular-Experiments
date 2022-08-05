@@ -1,0 +1,21 @@
+<ng-container focusInvalidInput>
+    <form [formGroup]="myForm" (submit)="submit(myForm)" #myFormElement>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field  appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input matInput type="text" formControlName="surname" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" [formControl]="hobbies.get('frontend')" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>CP</mat-label>
+        <input matInput type="text" [formControl]="hobbies.get('blockchain')" />
+      </mat-form-field>
+    <button mat-button>submit</button>
+    </form>
+</ng-container>
