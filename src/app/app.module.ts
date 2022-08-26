@@ -164,11 +164,11 @@ registerLocaleData(localeDeAt);
     },
     {
       provide: NUMERIC_INPUT_LOCALE,
-      useValue: 'nl-nl'
+      useValue: 'en-CA'
     },
     {
       provide: NUMERIC_DISPLAY_INPUT_LOCALE,
-      useValue: 'nl-nl'
+      useValue: 'de-AT'
     }
   ],
   bootstrap: [AppComponent],

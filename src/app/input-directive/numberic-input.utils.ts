@@ -52,7 +52,7 @@ export function getFormattedValueForDisplay(
   defaultNumericValue?: number,
 ): string {
   const formatted = parseValue(value, decimalSeparator, thousandsSeparator);
-  return isNaN(Number(formatted?.replace(decimalSeparator,"."))) ? defaultNumericValue!.toString() : formatted;
+  return isNaN(Number(formatted?.replace(decimalSeparator, "."))) ? defaultNumericValue!.toString() : formatted;
 }
 
 /**
@@ -143,7 +143,9 @@ function mapKeyCodeToKeyName(keyCode: number): string {
 function parseValue(value: string, decimalSeparator: string, thousandSeparator: string, defaultNumericValue?: number): string {
   value = replaceDecimalSeparator(value, decimalSeparator);
   value = appendZeroToDecimal(value, decimalSeparator);
-  value = removeThousandsSeparator(value, thousandSeparator);
+  if (decimalSeparator !== thousandSeparator) {
+    value = removeThousandsSeparator(value, thousandSeparator);
+  }
   const isValid: boolean = new RegExp(SIGNED_DOUBLE_REGEX).test(value);
   return isValid ? value : defaultNumericValue?.toString()!;
 }

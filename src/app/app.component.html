@@ -32,10 +32,17 @@
 <!--                     [pattern]="'[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'"-->
 <!--  ></app-generic-input>-->
 <!-- <app-moveable-button></app-moveable-button> -->
-<div class="cost-wrapper" [formGroup]="formGroup">
-  <mat-form-field appearance="outline">
-    <input matInput minOnSetValue="999" maxOnSetValue="999999" type="string" formControlName="cost" dlNumericInput>
-  </mat-form-field>
-  {{formGroup.value | json}}
+<form>
+  <div>
+    <div class="cost-wrapper" [formGroup]="formGroup">
+      <mat-form-field appearance="outline">
+        <input matInput type="string" formControlName="cost" dlNumericInput>
+      </mat-form-field>
+      {{formGroup.value | json}}
+    </div>
+    <button mat-button type="submit">Submit</button>
+  </div>
 
-</div>
+</form>
+
+

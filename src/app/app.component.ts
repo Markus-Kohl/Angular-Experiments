@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       {
         email: [],
         cost: []
-      }, {updateOn: 'blur'}
+      }, {updateOn: 'submit'}
     )
   }
 

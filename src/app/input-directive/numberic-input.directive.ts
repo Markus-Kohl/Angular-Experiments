@@ -48,14 +48,14 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
   private setValue(value: string): void {
     const formattedValue = getFormattedValueAsNumber(value, this.decimalSeparator, this.thousandsSeparator, this.defaultNumericValue!);
     this.localized.emit(this.localeService.localizeNumber(formattedValue));
-    this.el.value = getFormattedValueForDisplay(value, this.displayDecimalSeparator, this.thousandsSeparator, this.defaultNumericValue!);
     const isValid = validate(this.el, formattedValue, this.minOnSetValue, this.maxOnSetValue);
     if (!isValid) {
       this.control?.control?.patchValue(this.defaultNumericValue);
     }
-    //if (this.control && isValid) {
-      //this.control.control?.patchValue(formattedValue);
-    //}
+    if (this.control && isValid) {
+      this.control.control?.patchValue(formattedValue);
+    }
+    this.el.value = getFormattedValueForDisplay(value, this.displayDecimalSeparator, this.thousandsSeparator, this.defaultNumericValue!);
   }
 
   private onChange(): Observable<string> {
