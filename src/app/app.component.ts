@@ -28,6 +28,12 @@ export class AppComponent implements OnInit, AfterContentInit {
   ) {
     config.displayMode = DisplayMode.ONE;
     config.shouldDisplayErrors = () => true;
+    this.formGroup = this.formBuilder.group(
+      {
+        email: [],
+        cost: []
+      }, {updateOn: 'blur'}
+    )
   }
 
   ngOnInit(): void {}

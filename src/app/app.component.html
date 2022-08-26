@@ -21,6 +21,21 @@
 <!-- <app-valdemort></app-valdemort> -->
 <br>
 <br>
-<app-update-on-options></app-update-on-options>
-<app-input-with-restriction></app-input-with-restriction>
-<app-focus-input></app-focus-input>
+<!--<app-update-on-options></app-update-on-options>-->
+<!--<app-input-with-restriction></app-input-with-restriction>-->
+<!--<app-focus-input></app-focus-input>-->
+<!--<div [formGroup]="formGroup">-->
+<!--  <app-generic-input formControlName="email"-->
+<!--                     [isRequired]="true"-->
+<!--                     [errorMsg]="'Please enter your name'"-->
+<!--                     [label] = "'User Email'"-->
+<!--                     [pattern]="'[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'"-->
+<!--  ></app-generic-input>-->
+<!-- <app-moveable-button></app-moveable-button> -->
+<div class="cost-wrapper" [formGroup]="formGroup">
+  <mat-form-field appearance="outline">
+    <input matInput minOnSetValue="999" maxOnSetValue="999999" type="string" formControlName="cost" dlNumericInput>
+  </mat-form-field>
+  {{formGroup.value | json}}
+
+</div>

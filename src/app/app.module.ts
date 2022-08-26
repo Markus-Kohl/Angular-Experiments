@@ -69,6 +69,11 @@ import { UpdateOnChangeComponent } from './update-on-options/update-on-change/up
 import { InputWithRestrictionComponent } from './input-with-restriction/input-with-restriction.component';
 import { FocusInputComponent } from './directive-to-focus-on-invalid-input/focus-input/focus-input.component';
 import { FocusInvalidInputDirective } from './directive-to-focus-on-invalid-input/focus-invalid-input.directive';
+import { GenericInputComponent } from './reusable input/generic-input/generic-input.component';
+import { MoveableButtonComponent } from './moveable-button/moveable-button.component';
+import { MoveAwayDirective } from './moveable-button/move-away.directive';
+import {NumericInputModule} from "./input-directive/numeric-input.module";
+import {NUMERIC_DISPLAY_INPUT_LOCALE, NUMERIC_INPUT_LOCALE } from './input-directive/locale.tokens';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -118,8 +123,12 @@ registerLocaleData(localeDeAt);
     InputWithRestrictionComponent,
     FocusInputComponent,
     FocusInvalidInputDirective,
+    GenericInputComponent,
+    MoveableButtonComponent,
+    MoveAwayDirective,
   ],
   imports: [
+    NumericInputModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -148,11 +157,19 @@ registerLocaleData(localeDeAt);
         ...VALIDATION_MESSAGES,
       },
     },
-    { provide: LOCALE_ID, useValue: 'de-at' },
+    { provide: LOCALE_ID, useValue: 'en' },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { floatLabel: 'always' },
     },
+    {
+      provide: NUMERIC_INPUT_LOCALE,
+      useValue: 'nl-nl'
+    },
+    {
+      provide: NUMERIC_DISPLAY_INPUT_LOCALE,
+      useValue: 'nl-nl'
+    }
   ],
   bootstrap: [AppComponent],
 })
