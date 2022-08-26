@@ -59,4 +59,5 @@ export class InputWithRestrictionComponent implements OnInit {
       $event.target.value = $event.target.value.replace($event.target.value,$event.target.value.slice(0,6));
     }
   }
+
 }
