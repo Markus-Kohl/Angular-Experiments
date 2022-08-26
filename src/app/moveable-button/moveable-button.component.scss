@@ -1,0 +1,25 @@
+
+.play-ground {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.hungry-cat-pointer{
+  cursor: url(../../assets/hungry_cat.png), auto;
+}
+
+.cat {
+  display: flex;
+  flex-direction: column;
+}
+
+.cat div {
+
+}
+
+[a] {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
