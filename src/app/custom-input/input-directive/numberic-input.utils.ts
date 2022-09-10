@@ -40,7 +40,7 @@ export function getFormattedValueAsNumber(
   defaultNumericValue?: number,
 ): number {
   const formatted = Number(
-    parseValue(value, decimalSeparator, thousandsSeparator).replace(decimalSeparator, '.')
+    parseValue(value, decimalSeparator, thousandsSeparator)?.replace(decimalSeparator, '.')
   );
   return isNaN(formatted) ? defaultNumericValue! : formatted;
 }

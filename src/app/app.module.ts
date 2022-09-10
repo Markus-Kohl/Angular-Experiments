@@ -66,14 +66,14 @@ import { UpdateOnOptionsComponent } from './update-on-options/update-on-options.
 import { UpdateOnBlurComponent } from './update-on-options/update-on-blur/update-on-blur.component';
 import { UpdateOnSubmitComponent } from './update-on-options/update-on-submit/update-on-submit.component';
 import { UpdateOnChangeComponent } from './update-on-options/update-on-change/update-on-change.component';
-import { InputWithRestrictionComponent } from './input-with-restriction/input-with-restriction.component';
+import { CustomInput } from './custom-input/custom-input.component';
 import { FocusInputComponent } from './directive-to-focus-on-invalid-input/focus-input/focus-input.component';
 import { FocusInvalidInputDirective } from './directive-to-focus-on-invalid-input/focus-invalid-input.directive';
 import { GenericInputComponent } from './reusable input/generic-input/generic-input.component';
 import { MoveableButtonComponent } from './moveable-button/moveable-button.component';
 import { MoveAwayDirective } from './moveable-button/move-away.directive';
-import {NumericInputModule} from "./input-directive/numeric-input.module";
-import {NUMERIC_DISPLAY_INPUT_LOCALE, NUMERIC_INPUT_LOCALE } from './input-directive/locale.tokens';
+import {NumericInputModule} from "./custom-input/input-directive/numeric-input.module";
+import {NUMERIC_DISPLAY_INPUT_LOCALE, NUMERIC_INPUT_LOCALE } from './custom-input/input-directive/locale.tokens';
 
 registerLocaleData(localeDeAt);
 @NgModule({
@@ -120,7 +120,7 @@ registerLocaleData(localeDeAt);
     UpdateOnBlurComponent,
     UpdateOnSubmitComponent,
     UpdateOnChangeComponent,
-    InputWithRestrictionComponent,
+    CustomInput,
     FocusInputComponent,
     FocusInvalidInputDirective,
     GenericInputComponent,
