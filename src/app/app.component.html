@@ -34,9 +34,12 @@
 <!-- <app-moveable-button></app-moveable-button> -->
 <form [formGroup]="formGroup" (submit)="onSubmit()">
   <app-input-with-restriction formControlName="cost" [required]="true"
-                              maxLength="6"></app-input-with-restriction>
+                              maxLength="6"
+                              min="0.01"
+                              max="9999"
+  ></app-input-with-restriction>
   <button mat-button type="submit">Submit</button>
-  {{formGroup.value | json}}
-  {{formGroup.get('cost').touched | json}}
+  values: {{formGroup.value | json}}
+  errors: {{formGroup.get('cost').errors | json}}
 </form>
 

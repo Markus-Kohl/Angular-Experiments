@@ -10,7 +10,8 @@ import {Subscription} from 'rxjs';
     provide: NG_VALUE_ACCESSOR,
     multi: true,
     useExisting: forwardRef(() => CustomInput)
-  }],
+  }
+  ],
   host: {
     '(blur)': '_onTouched()'
   }
@@ -19,6 +20,8 @@ export class CustomInput implements OnInit, ControlValueAccessor, OnDestroy {
   @Input() required: boolean = false;
   @Input() minLength: number;
   @Input() maxLength: number;
+  @Input() min: number;
+  @Input() max: number;
   formControl = new FormControl('', {updateOn: 'blur'});
   _onTouched = () => {
   };

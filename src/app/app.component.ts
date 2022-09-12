@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.formGroup = this.formBuilder.group(
       {
         email: [],
-        cost: [null, Validators.required]
+        cost: [null, [Validators.required, Validators.min(0.01), Validators.max(999)]]
       }, {updateOn: 'blur'}
     )
   }

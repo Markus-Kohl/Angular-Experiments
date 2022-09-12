@@ -4,8 +4,9 @@ import {fromEvent, merge, Observable, Subject} from 'rxjs';
 import {map, takeUntil, tap} from 'rxjs/operators';
 import {LocaleService} from './locale.service';
 import {
-  DEFAULT_NUMERIC_VALUE, getFormattedValueForDisplay,
+  DEFAULT_NUMERIC_VALUE,
   getFormattedValueAsNumber,
+  getFormattedValueForDisplay,
   isAllowedKey,
   overrideInputType,
   validate,
@@ -56,6 +57,7 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
       this.control.control?.patchValue(formattedValue);
     }
     this.el.value = getFormattedValueForDisplay(value, this.displayDecimalSeparator, this.thousandsSeparator, this.defaultNumericValue!);
+
   }
 
   private onChange(): Observable<string> {
@@ -79,7 +81,7 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
   private onKeyDown(): void {
     fromEvent(this.el, 'keydown')
       .pipe(
-       takeUntil(this.destroy$),
+        takeUntil(this.destroy$),
         tap((e) => {
           this.el.setCustomValidity('');
           if (isAllowedKey(e as KeyboardEvent, this.decimalSeparators)) {
