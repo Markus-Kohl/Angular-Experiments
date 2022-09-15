@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomInput } from './custom-input.component';
+import { HighlightComponent } from './highlight.component';
 
-describe('InputWithRestrictionComponent', () => {
-  let component: CustomInput;
-  let fixture: ComponentFixture<CustomInput>;
+describe('HighlightComponent', () => {
+  let component: HighlightComponent;
+  let fixture: ComponentFixture<HighlightComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomInput ]
+      declarations: [ HighlightComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomInput);
+    fixture = TestBed.createComponent(HighlightComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,7 +6,6 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": false,
-    "strict": false,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": false,
     "sourceMap": true,
@@ -22,7 +21,6 @@
       "dom"
     ],
     "strictPropertyInitialization": false
-
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -30,6 +28,5 @@
     "strictInputAccessModifiers": false,
     "strictTemplates": false,
     "strictNullChecks": false
-  },
-  "strictNullChecks":false
+  }
 }

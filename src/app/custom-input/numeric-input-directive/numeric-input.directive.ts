@@ -10,7 +10,7 @@ import {
   isAllowedKey,
   overrideInputType,
   validate,
-} from './numberic-input.utils';
+} from './numeric-input.utils';
 
 @Directive({
   selector: '[dlNumericInput]',
@@ -21,12 +21,15 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
   @Input() minOnSetValue: number;
   @Input() maxOnSetValue: number;
   @Input() defaultNumericValue = DEFAULT_NUMERIC_VALUE;
+  @Input() negativeNumberForbidden = false;
   @Output() localized = new EventEmitter<string>();
 
   private readonly decimalSeparators = this.localeService.getDecimalSeparators();
   private readonly displayDecimalSeparators = this.localeService.getDisplayDecimalSeparators();
   private readonly thousandSeparators = this.localeService.getThousandSeparators();
   private readonly destroy$ = new Subject<boolean>();
+  private readonly negativeCharacter = '-';
+
 
   constructor(
     private hostElement: ElementRef,
@@ -40,6 +43,7 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
     this.onKeyDown();
     this.onFormSubmit();
     this.onValueChange();
+    this.setValue(this.el.value);
   }
 
   ngOnDestroy(): void {
@@ -57,8 +61,19 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
       this.control.control?.patchValue(formattedValue);
     }
     this.el.value = getFormattedValueForDisplay(value, this.displayDecimalSeparator, this.thousandsSeparator, this.defaultNumericValue!);
-
   }
+
+  private checkKeyboardEvent(e: KeyboardEvent) {
+    this.el.setCustomValidity('');
+    if (this.negativeNumberForbidden && e.key === this.negativeCharacter) {
+      e.preventDefault();
+    }
+    if (isAllowedKey(e, this.decimalSeparators)) {
+      return;
+    }
+    e.preventDefault();
+  }
+
 
   private onChange(): Observable<string> {
     return fromEvent(this.el, 'change').pipe(map(() => this.el.value));
@@ -78,19 +93,18 @@ export class NumericInputDirective implements AfterViewInit, OnDestroy {
     );
   }
 
+  // private onKeyDown(): void {
+  //   fromEvent(this.el, 'keydown')
+  //     .pipe(
+  //       takeUntil(this.destroy$))
+  //     .subscribe((e: KeyboardEvent) => this.checkKeyboadEvent(e));
+  // }
+
   private onKeyDown(): void {
     fromEvent(this.el, 'keydown')
       .pipe(
-        takeUntil(this.destroy$),
-        tap((e) => {
-          this.el.setCustomValidity('');
-          if (isAllowedKey(e as KeyboardEvent, this.decimalSeparators)) {
-            return;
-          }
-          e.preventDefault();
-        })
-      )
-      .subscribe();
+        takeUntil(this.destroy$))
+      .subscribe((e: any) => this.checkKeyboardEvent(e));
   }
 
   private onFormSubmit(): void {

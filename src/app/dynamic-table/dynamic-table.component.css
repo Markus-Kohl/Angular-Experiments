@@ -5,6 +5,11 @@
 mat-paginator {
 
 }
+
 table {
   width: 100%;
+}
+
+.yellow-highlight {
+  background: yellow;
 }

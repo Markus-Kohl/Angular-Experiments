@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component } from '@angular/core';
-import { NumericInputDirective } from './numberic-input.directive';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component} from '@angular/core';
+import {NumericInputDirective} from './numeric-input.directive';
 
 describe('dlNumericInput', () => {
   let testFixture: ComponentFixture<TestComponent>;
@@ -16,8 +16,8 @@ describe('dlNumericInput', () => {
     TestBed.configureTestingModule({
       declarations: [TestComponent, NumericInputDirective]
     });
-    eventAlphabetic = new KeyboardEvent('keydown', { key: 'a', cancelable: true });
-    eventNumeric = new KeyboardEvent('keydown', { key: '3', cancelable: true });
+    eventAlphabetic = new KeyboardEvent('keydown', {key: 'a', cancelable: true});
+    eventNumeric = new KeyboardEvent('keydown', {key: '3', cancelable: true});
   });
 
   it('should allow key - regular input', () => {
@@ -58,11 +58,12 @@ describe('dlNumericInput', () => {
   template: ``
 })
 class TestComponent {
-  constructor() {}
+  constructor() {
+  }
 }
 
 function createTestComponent(template: string): ComponentFixture<TestComponent> {
-  const component = TestBed.overrideComponent(TestComponent, { set: { template } }).createComponent(TestComponent);
+  const component = TestBed.overrideComponent(TestComponent, {set: {template}}).createComponent(TestComponent);
   component.detectChanges();
   return component;
 }

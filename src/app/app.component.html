@@ -14,7 +14,7 @@
 <!--<app-address-cards></app-address-cards>-->
 <!-- <app-upload></app-upload> -->
 <!--<app-scss-experiments></app-scss-experiments>-->
-<!-- <app-periodic-table></app-periodic-table> -->
+<!--<app-periodic-table></app-periodic-table>-->
 <!-- <app-auto-complete></app-auto-complete> -->
 <!-- <app-table-with-inputs></app-table-with-inputs> -->
 <!--<app-table></app-table> -->
@@ -32,14 +32,16 @@
 <!--                     [pattern]="'[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}'"-->
 <!--  ></app-generic-input>-->
 <!-- <app-moveable-button></app-moveable-button> -->
-<form [formGroup]="formGroup" (submit)="onSubmit()">
-  <app-input-with-restriction formControlName="cost" [required]="true"
-                              maxLength="6"
-                              min="0.01"
-                              max="9999"
-  ></app-input-with-restriction>
-  <button mat-button type="submit">Submit</button>
-  values: {{formGroup.value | json}}
-  errors: {{formGroup.get('cost').errors | json}}
-</form>
+<!--<form [formGroup]="formGroup" (submit)="onSubmit()">-->
+<!--  <app-input-with-restriction formControlName="cost" [required]="true"-->
+<!--                              maxLength="6"-->
+<!--                              min="0.01"-->
+<!--                              max="9999"-->
+<!--  ></app-input-with-restriction>-->
+<!--  <button mat-button type="submit">Submit</button>-->
+<!--  values: {{formGroup.value | json}}-->
+<!--  errors: {{formGroup.get('cost').errors | json}}-->
+<!--</form>-->
+
+<app-highlight></app-highlight>
 

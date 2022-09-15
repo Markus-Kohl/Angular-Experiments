@@ -4,19 +4,19 @@ import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-input-with-restriction',
-  templateUrl: './custom-input.component.html',
-  styleUrls: ['./custom-input.component.scss'],
+  templateUrl: './custom-decimal-input.component.html',
+  styleUrls: ['./custom-decimal-input.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     multi: true,
-    useExisting: forwardRef(() => CustomInput)
+    useExisting: forwardRef(() => CustomDecimalInput)
   }
   ],
   host: {
     '(blur)': '_onTouched()'
   }
 })
-export class CustomInput implements OnInit, ControlValueAccessor, OnDestroy {
+export class CustomDecimalInput implements OnInit, ControlValueAccessor, OnDestroy {
   @Input() required: boolean = false;
   @Input() minLength: number;
   @Input() maxLength: number;

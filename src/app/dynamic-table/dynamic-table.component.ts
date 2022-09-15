@@ -9,14 +9,9 @@ import {
   QueryList,
   ViewChild,
 } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { Sort, SortDirection } from '@angular/material/sort';
-import {
-  MatColumnDef,
-  MatFooterRowDef,
-  MatTable,
-  MatTableDataSource,
-} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {Sort} from '@angular/material/sort';
+import {MatColumnDef, MatFooterRowDef, MatTable, MatTableDataSource,} from '@angular/material/table';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -24,19 +19,20 @@ import {
   styleUrls: ['./dynamic-table.component.css'],
 })
 export class DynamicTableComponent<T>
-  implements AfterViewInit, OnInit, AfterContentInit
-{
+  implements AfterViewInit, OnInit, AfterContentInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatTable, { static: true }) table: MatTable<T>;
+  @ViewChild(MatTable, {static: true}) table: MatTable<T>;
   @ContentChildren(MatColumnDef) columnDefs: QueryList<MatColumnDef>;
-  @ViewChild(MatFooterRowDef, { static: true }) footerDef: MatFooterRowDef;
+  @ViewChild(MatFooterRowDef, {static: true}) footerDef: MatFooterRowDef;
   @Input() data: T[];
   dataSource: MatTableDataSource<T> = new MatTableDataSource<T>();
   @Input() headers: string[];
   @Input() showFooter: boolean = false;
   @Input() showFilter: boolean = false;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  }
+
   ngOnInit(): void {
     this.dataSource.data = this.data;
   }
@@ -44,6 +40,7 @@ export class DynamicTableComponent<T>
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
+
   // after the <ng-content> has been initialized, the column definitions are available.
   // All that's left is to add them to the table ourselves:
   ngAfterContentInit() {
@@ -51,10 +48,8 @@ export class DynamicTableComponent<T>
   }
 
   sortData(sort: Sort) {
-    console.log('sort: ', sort);
     this.dataSource.sort;
     const data = this.data.slice();
-
     if (!sort.active || sort.direction === '') {
       this.dataSource.data = data;
     } else {
@@ -68,7 +63,6 @@ export class DynamicTableComponent<T>
 
   applyFilter(event: Event) {
     const filterValue = (event?.target as HTMLInputElement).value;
-    console.log('filterValue: ', filterValue);
     this.dataSource.filter = filterValue?.trim().toLowerCase();
   }
 
